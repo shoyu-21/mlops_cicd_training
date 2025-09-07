@@ -1,5 +1,9 @@
 # ml_practice
 
+[![ml-cicd](https://github.com/shoyu-21/mlops_cicd_training/actions/workflows/ci.yaml/badge.svg)](https://github.com/shoyu-21/mlops_cicd_training/actions/workflows/ci.yaml)
+
+[![codecov](https://codecov.io/gh/shoyu-21/mlops_cicd_training/branch/main/graph/badge.svg)](https://codecov.io/gh/shoyu-21/mlops_cicd_training)
+
 ## pytest のサンプルを追加しました
 
 - サンプルコード: `app/sample.py`
