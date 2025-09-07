@@ -4,4 +4,3 @@ __all__ = [
 ]
 
 from .sample import add, is_palindrome
-
