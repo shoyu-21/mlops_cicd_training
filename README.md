@@ -1,5 +1,7 @@
 # ml_practice
 
+[![codecov](https://codecov.io/gh/shoyu-21/mlops_cicd_training/branch/main/graph/badge.svg)](https://codecov.io/gh/shoyu-21/mlops_cicd_training)
+
 ## pytest のサンプルを追加しました
 
 - サンプルコード: `app/sample.py`
