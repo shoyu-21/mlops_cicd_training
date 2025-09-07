@@ -36,3 +36,18 @@ def clamp(x: float, min_value: float, max_value: float) -> float:
     if x > max_value:
         return max_value
     return x
+
+
+def safe_divide(a: float, b: float, default: float | None = None) -> float:
+    """Divide `a` by `b`.
+
+    If `b` is zero and `default` is provided, return `default` instead of
+    raising. Otherwise, raise ``ZeroDivisionError``.
+    """
+
+    if b == 0:
+        if default is not None:
+            return default
+        # Let Python's semantics be clear to the caller
+        raise ZeroDivisionError("division by zero")
+    return a / b
