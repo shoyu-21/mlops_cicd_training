@@ -27,4 +27,3 @@ def test_add_raises_type_error_on_mixed_types():
 )
 def test_is_palindrome_various_cases(text: str, expected: bool):
     assert is_palindrome(text) is expected
-
