@@ -1,0 +1,42 @@
+name: ml-cicd
+on:
+  push:
+    branches: [main]
+jobs:
+  lint_and_test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - uses: astral-sh/setup-uv@5
+        with:
+          enable-cache: true
+          cache-dependency-glob: |
+            pyproject.toml
+            uv.lock
+
+      - name: Sync dependencies
+        run: |
+          uv sync --group dev
+
+      - name: Lint (ruff)
+        run: |
+          uv run ruff check .
+
+      - name: Type check (mypy)
+        run: |
+          uv run mypy .
+
+      - name: lint_and_test (pytest)
+        run: |
+          uv run pytest -q
+      
